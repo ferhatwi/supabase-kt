@@ -6,6 +6,8 @@ build
 
 .idea
 
+local.properties
+
 github.properties
 gradle.properties
 
