@@ -30,9 +30,10 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             pom {
+		from(components["java"])
                 groupId = "io.github.ferhatwi"
                 artifactId = "supabase-kt"
-                version = "0.0.1-rc"
+                version = "0.0.2"
                 name.set("Supabase")
                 description.set("Internal dependency for future Supabase projects")
                 url.set("http://www.github.com/ferhatwi/supabase-kt")

@@ -1,7 +1,6 @@
 package io.github.ferhatwi.supabase
 
-
-internal lateinit var API: String
+lateinit var API: String
 
 object Supabase {
 
