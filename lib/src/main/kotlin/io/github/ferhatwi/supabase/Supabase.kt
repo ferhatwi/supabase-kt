@@ -1,8 +1,9 @@
 package io.github.ferhatwi.supabase
 
-object Supabase {
 
-    internal lateinit var API: String
+internal lateinit var API: String
+
+object Supabase {
 
     fun initialize(api: String) {
         API = api

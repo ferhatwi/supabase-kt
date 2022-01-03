@@ -31,7 +31,7 @@ publishing {
         create<MavenPublication>("mavenJava") {
             pom {
                 groupId = "io.github.ferhatwi"
-                artifactId = "supabase"
+                artifactId = "supabase-kt"
                 version = "0.0.1-rc"
                 name.set("Supabase")
                 description.set("Internal dependency for future Supabase projects")
@@ -79,16 +79,5 @@ dependencies {
 
     // Use the Kotlin JDK 8 standard library.
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-}
-
-tasks.jar {
-    manifest {
-        attributes(
-            mapOf(
-                "Implementation-Title" to project.name,
-                "Implementation-Version" to project.version
-            )
-        )
-    }
 }
 
