@@ -12,28 +12,60 @@ plugins {
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
-
-    id("com.vanniktech.maven.publish") version "0.18.0"
-    id("org.jetbrains.dokka:dokka-gradle-plugin") version "1.6.0"
+    `maven-publish`
+    signing
 }
 
 publishing {
-  repositories {
-    maven {
-      name = "GitHubPackages"
-      url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2")
-      credentials {
-        username = System.getenv("OSSRH_USERNAME")
-        password = System.getenv("OSSRH_TOKEN")
-      }
+    repositories {
+        maven {
+            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2")
+            credentials {
+                username = System.getenv("OSSRH_USERNAME")
+                password = System.getenv("OSSRH_TOKEN")
+            }
+        }
     }
-  }
+
+    publications {
+        create<MavenPublication>("mavenJava") {
+            pom {
+                groupId = "io.github.ferhatwi"
+                artifactId = "supabase"
+                version = "0.0.1-rc"
+                name.set("Supabase")
+                description.set("Internal dependency for future Supabase projects")
+                url.set("http://www.github.com/ferhatwi/supabase-kt")
+                licenses {
+                    license {
+                        name.set("The Apache License, Version 2.0")
+                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("ferhatwi")
+                        name.set("Ferhat")
+                        email.set("ferhatyigit7@gmail.com")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:git://github.com/ferhatwi/supabase-kt.git")
+                    developerConnection.set("scm:git:ssh://github.com/ferhatwi/ferhatwi.git")
+                    url.set("http://github.com/ferhatwi/supabase-kt/")
+                }
+            }
+        }
+    }
+}
+
+signing {
+    sign(publishing.publications["mavenJava"])
 }
 
 java {
+    withJavadocJar()
     withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
@@ -51,8 +83,12 @@ dependencies {
 
 tasks.jar {
     manifest {
-        attributes(mapOf("Implementation-Title" to project.name,
-                         "Implementation-Version" to project.version))
+        attributes(
+            mapOf(
+                "Implementation-Title" to project.name,
+                "Implementation-Version" to project.version
+            )
+        )
     }
 }
 

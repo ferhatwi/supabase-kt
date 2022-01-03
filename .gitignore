@@ -10,5 +10,3 @@ local.properties
 
 github.properties
 gradle.properties
-
-secret-keys.gpg
