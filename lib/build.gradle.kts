@@ -20,6 +20,7 @@ publishing {
     repositories {
         maven {
             url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2")
+
             credentials {
                 username = System.getenv("OSSRH_USERNAME")
                 password = System.getenv("OSSRH_TOKEN")
@@ -30,12 +31,12 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             pom {
-		from(components["java"])
+                from(components["java"])
                 groupId = "io.github.ferhatwi"
                 artifactId = "supabase-kt"
-                version = "0.0.2"
+                version = "0.1.0"
                 name.set("Supabase")
-                description.set("Internal dependency for future Supabase projects")
+                description.set("Internal dependency for Supabase clients")
                 url.set("http://www.github.com/ferhatwi/supabase-kt")
                 licenses {
                     license {

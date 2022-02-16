@@ -1,3 +1,3 @@
 # Supabase
- Internal dependency for future Supabase projects
+ Internal dependency for Supabase clients
  
