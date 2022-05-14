@@ -16,4 +16,8 @@ object Supabase {
     fun setAuth(authorization: String) {
         AUTHORIZATION = authorization
     }
+
+    fun clearAuth() {
+        AUTHORIZATION = API_KEY
+    }
 }
