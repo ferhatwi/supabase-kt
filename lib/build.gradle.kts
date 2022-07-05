@@ -1,6 +1,6 @@
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.6.10"
+    id("org.jetbrains.kotlin.jvm") version "1.7.0"
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
@@ -25,7 +25,7 @@ publishing {
                 from(components["java"])
                 groupId = "io.github.ferhatwi"
                 artifactId = "supabase-kt"
-                version = "0.2.3"
+                version = "0.2.5"
                 name.set("Supabase")
                 description.set("Internal dependency for Supabase clients")
                 url.set("http://www.github.com/ferhatwi/supabase-kt")
@@ -75,7 +75,7 @@ dependencies {
 
     api("io.ktor:ktor-client-core:2.0.3")
     api("io.ktor:ktor-client-cio:2.0.3")
-    api("io.ktor:ktor-client-serialization:2.0.3")
-    api("io.ktor:ktor-client-gson:2.0.3")
+    api("io.ktor:ktor-client-content-negotiation:2.0.3")
+    api("io.ktor:ktor-serialization-gson:2.0.3")
 }
 
