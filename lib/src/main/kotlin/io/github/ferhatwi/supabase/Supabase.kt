@@ -1,6 +1,5 @@
 package io.github.ferhatwi.supabase
 
-
 object Supabase {
 
     lateinit var PROJECT_ID: String

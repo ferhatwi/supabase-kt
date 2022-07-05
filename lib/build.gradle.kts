@@ -25,7 +25,7 @@ publishing {
                 from(components["java"])
                 groupId = "io.github.ferhatwi"
                 artifactId = "supabase-kt"
-                version = "0.2.2"
+                version = "0.2.3"
                 name.set("Supabase")
                 description.set("Internal dependency for Supabase clients")
                 url.set("http://www.github.com/ferhatwi/supabase-kt")
@@ -73,9 +73,9 @@ dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    api("io.ktor:ktor-client-core:1.6.7")
-    api("io.ktor:ktor-client-cio:1.6.7")
-    api("io.ktor:ktor-client-serialization:1.6.7")
-    api("io.ktor:ktor-client-gson:1.6.7")
+    api("io.ktor:ktor-client-core:2.0.3")
+    api("io.ktor:ktor-client-cio:2.0.3")
+    api("io.ktor:ktor-client-serialization:2.0.3")
+    api("io.ktor:ktor-client-gson:2.0.3")
 }
 
